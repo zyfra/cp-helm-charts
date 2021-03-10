@@ -163,6 +163,8 @@ spec:
             mountPath: /opt/kafka/data-{{$k}}
           {{- end }}
         {{- end }}
+      securityContext:
+        fsGroup: {{ .Values.fsGroup }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
