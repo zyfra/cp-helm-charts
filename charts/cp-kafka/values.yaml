@@ -11,7 +11,7 @@ brokers: 3
 
 ## Image Info
 ## ref: https://hub.docker.com/r/confluentinc/cp-kafka/
-image: confluentinc/cp-enterprise-kafka
+#image: confluentinc/cp-enterprise-kafka
 imageTag: 6.0.1
 
 ## Specify a imagePullPolicy
@@ -38,6 +38,7 @@ updateStrategy: RollingUpdate
 securityContext: {}
   #  runAsUser: 1000
   #  runAsGroup: 1000
+fsGroup: 1000
 
 securityContext: {}
   #  runAsUser: 1000
@@ -158,6 +159,8 @@ nodeport:
   enabled: false
   servicePort: 19092
   firstListenerPort: 31090
+
+enableEnterpriseFeatures: true
 
 ## ------------------------------------------------------
 ## Zookeeper
