@@ -38,7 +38,6 @@ updateStrategy: RollingUpdate
 # Security Context
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 # for Zookeeper container
-fsGroup: 1000
 securityContext: {}
   #  runAsUser: 1000
   #  runAsGroup: 1000
