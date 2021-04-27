@@ -50,6 +50,11 @@ spec:
           - /etc/jmx-kafka-connect/jmx-kafka-connect-prometheus.yml
           ports:
           - containerPort: {{ .Values.prometheus.jmx.port }}
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - /tmp/connectors.sh
           resources:
 {{ toYaml .Values.prometheus.jmx.resources | indent 12 }}
           volumeMounts:
