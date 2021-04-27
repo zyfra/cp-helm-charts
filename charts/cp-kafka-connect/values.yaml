@@ -121,6 +121,10 @@ secrets:
   # username: kafka123
   # password: connect321
 
+envFromSecret:
+  enabled: false
+  name: connnector-secret
+
 ## These values are used only when "customEnv.CUSTOM_SCRIPT_PATH" is defined.
 ## "livenessProbe" is required only for the edge cases where the custom script to be ran takes too much time
 ## and errors by the ENTRYPOINT are ignored by the container

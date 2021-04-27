@@ -50,11 +50,6 @@ spec:
           - /etc/jmx-kafka-connect/jmx-kafka-connect-prometheus.yml
           ports:
           - containerPort: {{ .Values.prometheus.jmx.port }}
-          lifecycle:
-            postStart:
-              exec:
-                command:
-                  - /tmp/connectors.sh
           resources:
 {{ toYaml .Values.prometheus.jmx.resources | indent 12 }}
           volumeMounts:
@@ -74,6 +69,11 @@ spec:
             {{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+          {{- if .Values.envFromSecret.enabled }}
+          envFrom:
+            - secretRef:
+                name: {{ .Values.envFromSecret.name }}
+          {{- end }}
           env:
             - name: CONNECT_REST_ADVERTISED_HOST_NAME
               valueFrom:
