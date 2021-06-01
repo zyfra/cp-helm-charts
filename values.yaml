@@ -141,7 +141,9 @@ cp-kafka-connect:
   #  requests:
   #   cpu: 100m
   #   memory: 128Mi
-
+  envFromSecret:
+    enabled: true
+    name: connnector-secret
 ## ------------------------------------------------------
 ## KSQL Server
 ## ------------------------------------------------------
