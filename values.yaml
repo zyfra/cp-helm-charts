@@ -144,6 +144,8 @@ cp-kafka-connect:
   envFromSecret:
     enabled: true
     name: connnector-secret
+  customEnv:
+    CUSTOM_SCRIPT_PATH: /opt/connectors.sh
 ## ------------------------------------------------------
 ## KSQL Server
 ## ------------------------------------------------------
