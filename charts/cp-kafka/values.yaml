@@ -39,10 +39,6 @@ securityContext: {}
   #  runAsUser: 1000
   #  runAsGroup: 1000
 
-securityContext: {}
-  #  runAsUser: 1000
-  #  runAsGroup: 1000
-
 ## securityContextConstraints. useful for OpenShift/OKD with default restricted securityContextConstraints
 securityContextConstraints: {}
   # name: kafka
@@ -159,7 +155,7 @@ nodeport:
   servicePort: 19092
   firstListenerPort: 31090
 
-enableEnterpriseFeatures: true
+enableEnterpriseFeatures: false
 
 ## ------------------------------------------------------
 ## Zookeeper

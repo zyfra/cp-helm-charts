@@ -75,6 +75,12 @@ cp-kafka:
   #  runAsGroup: 1000
   #serviceAccount:
   #  create: true
+  "advertised.listeners": |-
+   EXTERNAL://${HOST_IP}:$((31090 + ${KAFKA_BROKER_ID}))
+  nodeport:
+    enabled: true
+    servicePort: 19092
+    firstListenerPort: 31090
 
 ## ------------------------------------------------------
 ## Schema Registry
